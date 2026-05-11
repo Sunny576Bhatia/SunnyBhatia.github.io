@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sunny Bhatia | Portfolio</title>
+    <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap)" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2c5282',
+                        accent: '#ed8936',
+                        dark: '#1a202c',
+                        light: '#f7fafc'
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Source Sans Pro', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: #ed8936;
+            margin-left: 4px;
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ed8936;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background-color: #ed8936;
+            border-radius: 50%;
+            border: 3px solid #1a365d;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #ed8936;
+            border-radius: 2px;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .hamburger span {
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #ed8936, #dd6b20);
+            animation: skillFill 1.5s ease-out forwards;
+            transform-origin: left;
+        }
+        
+        @keyframes skillFill {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(237, 137, 54, 0.3);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="font-display text-xl font-bold text-white">Dr. Sunny Bhatia</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-accent transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-accent transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-white hover:text-accent transition-colors">Experience</a>
+                    <a href="#research" class="nav-link text-white hover:text-accent transition-colors">Research</a>
+                    <a href="#publications" class="nav-link text-white hover:text-accent transition-colors">Publications</a>
+                    <a href="#certifications" class="nav-link text-white hover:text-accent transition-colors">Certifications</a>
+                </div>
+                
+                <!-- Hamburger Menu Button -->
+                <button id="hamburger" class="hamburger md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5">
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-16 right-0 bottom-0 w-64 bg-primary shadow-xl md:hidden">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="text-white hover:text-accent transition-colors text-lg py-2 border-b border-secondary/30">Home</a>
+                <a href="#about" class="text-white hover:text-accent transition-colors text-lg py-2 border-b border-secondary/30">About</a>
+                <a href="#experience" class="text-white hover:text-accent transition-colors text-lg py-2 border-b border-secondary/30">Experience</a>
+                <a href="#research" class="text-white hover:text-accent transition-colors text-lg py-2 border-b border-secondary/30">Research</a>
+                <a href="#publications" class="text-white hover:text-accent transition-colors text-lg py-2 border-b border-secondary/30">Publications</a>
+                <a href="#certifications" class="text-white hover:text-accent transition-colors text-lg py-2">Certifications</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Decorative particles -->
+        <div class="particle" style="top: 20%; left: 10%;"></div>
+        <div class="particle" style="top: 60%; left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 30%; right: 15%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 70%; right: 25%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="top: 40%; left: 40%; animation-delay: 1.5s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
+            <div class="fade-in" style="animation-delay: 0.2s;">
+                <div class="w-40 h-40 mx-auto mb-8 rounded-full border-4 border-accent overflow-hidden shadow-2xl">
+                    <div class="w-full h-full bg-secondary flex items-center justify-center">
+                        <span class="text-5xl text-white font-display font-bold">SB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="fade-in font-display text-4xl md:text-6xl font-bold text-white mb-4" style="animation-delay: 0.4s;">
+                Dr. Sunny Bhatia
+            </h1>
+            
+            <div class="fade-in h-12 md:h-16 flex items-center justify-center" style="animation-delay: 0.6s;">
+                <p class="text-xl md:text-2xl text-accent font-semibold">
+                    <span id="typing-text"></span><span class="typing-cursor"></span>
+                </p>
+            </div>
+            
+            <p class="fade-in text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed" style="animation-delay: 0.8s;">
+                PhD (Mechanical Engineering), NIT Kurukshetra | ISO 21001:2018 Certified Internal Auditor | 
+                Deputy Director – IQAC | Associate Professor – Mechanical Engineering
+            </p>
+            
+            <div class="fade-in flex flex-wrap justify-center gap-4 mt-10" style="animation-delay: 1s;">
+                <a href="#about" class="px-8 py-3 bg-accent text-white font-semibold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+                    Learn More
+                </a>
+                <a href="[linkedin.com](https://www.linkedin.com/in/sunny-bhatia-a1896924/)" target="_blank" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all transform hover:scale-105">
+                    Connect on LinkedIn
+                </a>
+            </div>
+            
+            <div class="fade-in grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto" style="animation-delay: 1.2s;">
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold text-accent">15+</p>
+                    <p class="text-gray-300 mt-1">Years Experience</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold text-accent">17+</p>
+                    <p class="text-gray-300 mt-1">Publications</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold text-accent">3</p>
+                    <p class="text-gray-300 mt-1">Patents</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold text-accent">3</p>
+                    <p class="text-gray-300 mt-1">ISO Certifications</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-primary mb-12">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        I am a dedicated academician and researcher with a PhD from NIT Kurukshetra, bringing over 15 years of experience in teaching, research, and institutional leadership. Currently serving as Deputy Director of the Internal Quality Assurance Cell (IQAC) at Manav Rachna International Institute of Research and Studies.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        My expertise spans quality assurance, ISO management systems, composite materials research, and academic administration. I have led multiple accreditation initiatives including NAAC, THE, and QS World Rankings, while maintaining an active research portfolio in polymer composites and mechanical engineering.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">PhD, NIT Kurukshetra</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">GATE Qualified</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">ISO 21001 Auditor</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">IELTS Band 8.5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="font-display text-xl font-semibold text-primary mb-4">Core Competencies</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Quality Assurance & Accreditation</span>
+                                <span class="text-accent font-semibold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">ISO Management Systems</span>
+                                <span class="text-accent font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Research & Publications</span>
+                                <span class="text-accent font-semibold">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Academic Leadership</span>
+                                <span class="text-accent font-semibold">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Composite Materials Research</span>
+                                <span class="text-accent font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-primary mb-12">Professional Experience</h2>
+            
+            <div class="relative border-l-4 border-primary ml-4 md:ml-8 pl-8 md:pl-12 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative">
+                    <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                        <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-3">2023 - Present</span>
+                        <h3 class="font-display text-xl font-bold text-primary">Deputy Director, IQAC & Associate Professor</h3>
+                        <p class="text-secondary font-medium mb-3">Manav Rachna International Institute of Research and Studies</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Managing university rankings and accreditation (NAAC, THE, QS)
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Management Representative for ISO 14001, 21001, and 50001 certifications
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Coordinating SDG curriculum and faculty competency management
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Leading internal administrative audits and quality enhancement
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item relative">
+                    <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                        <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-3">2010 - 2022</span>
+                        <h3 class="font-display text-xl font-bold text-primary">Assistant Professor, Automobile Engineering</h3>
+                        <p class="text-secondary font-medium mb-3">Manav Rachna International Institute of Research and Studies</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Teaching mechanical and automobile engineering courses
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Faculty advisor for international competitions (Formula Student Germany, Shell Eco-Marathon)
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Active research in composite materials and polymer engineering
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item relative">
+                    <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                        <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-3">2009</span>
+                        <h3 class="font-display text-xl font-bold text-primary">Lecturer</h3>
+                        <p class="text-secondary font-medium mb-3">Gurgaon Institute of Technology and Management</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                Teaching undergraduate engineering courses
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IQAC Responsibilities -->
+    <section class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-white mb-12">IQAC Work Profile</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 card-hover">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Rankings & Accreditation</h3>
+                    <p class="text-gray-300 text-sm">Managing NAAC, THE, and QS World University Rankings initiatives</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 card-hover">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">ISO Certifications</h3>
+                    <p class="text-gray-300 text-sm">Management Representative for ISO 14001, 21001, and 50001</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 card-hover">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">SDG Coordination</h3>
+                    <p class="text-gray-300 text-sm">Coordinating Sustainable Development Goals curriculum</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 card-hover">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Internal Audits</h3>
+                    <p class="text-gray-300 text-sm">Coordinating internal administrative audits for quality enhancement</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 card-hover">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Faculty Development</h3>
+                    <p class="text-gray-300 text-sm">Organizing induction programs and managing competency matrix</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 card-hover">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Data Analytics</h3>
+                    <p class="text-gray-300 text-sm">Compiling and analyzing data for institutional performance reports</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-primary mb-12">Research & Patents</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Patents -->
+                <div>
+                    <h3 class="font-display text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                        Patents
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="card-hover bg-gray-50 rounded-lg p-5 border-l-4 border-accent">
+                            <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded mb-2">GRANTED</span>
+                            <h4 class="font-semibold text-primary">Apparatus For Making Polymer Composites</h4>
+                            <p class="text-sm text-gray-600">Design No.: 397841-001 | October 2023</p>
+                        </div>
+                        
+                        <div class="card-hover bg-gray-50 rounded-lg p-5 border-l-4 border-accent">
+                            <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded mb-2">GRANTED</span>
+                            <h4 class="font-semibold text-primary">Trolley Bag with Charger</h4>
+                            <p class="text-sm text-gray-600">Design No.: 392125-001 | August 2023</p>
+                        </div>
+                        
+                        <div class="card-hover bg-gray-50 rounded-lg p-5 border-l-4 border-secondary">
+                            <span class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded mb-2">PUBLISHED</span>
+                            <h4 class="font-semibold text-primary">Plug-In Hybrid Electric Vehicles Medical Oxygen Generator</h4>
+                            <p class="text-sm text-gray-600">For COVID-19 Patients | January 2022</p>
+                        </div>
+                        
+                        <div class="card-hover bg-gray-50 rounded-lg p-5 border-l-4 border-secondary">
+                            <span class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded mb-2">PUBLISHED</span>
+                            <h4 class="font-semibold text-primary">Mechanized Retail Store with 3D Printed Autonomous Drone</h4>
+                            <p class="text-sm text-gray-600">Home Delivery System | December 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Research Areas -->
+                <div>
+                    <h3 class="font-display text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                        Research Focus Areas
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-5 text-white text-center">
+                            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                            </svg>
+                            <h4 class="font-semibold">Polymer Composites</h4>
+                        </div>
+                        
+                        <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-5 text-white text-center">
+                            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <h4 class="font-semibold">Tribology & Wear</h4>
+                        </div>
+                        
+                        <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-5 text-white text-center">
+                            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            <h4 class="font-semibold">Electric Vehicles</h4>
+                        </div>
+                        
+                        <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-5 text-white text-center">
+                            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                            </svg>
+                            <h4 class="font-semibold">Industry 4.0</h4>
+                        </div>
+                        
+                        <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-5 text-white text-center">
+                            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                            </svg>
+                            <h4 class="font-semibold">Vibration Analysis</h4>
+                        </div>
+                        
+                        <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-5 text-white text-center">
+                            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
+                            </svg>
+                            <h4 class="font-semibold">Materials Science</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-primary mb-12">Selected Publications</h2>
+            
+            <div class="grid gap-6">
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">SCIE</span>
+                        <span class="text-sm text-gray-500">High Performance Polymers, 2021</span>
+                    </div>
+                    <h3 class="font-semibold text-primary text-lg mb-2">Effect of the content of silane-functionalized boron carbide on the mechanical and wear performance of B₄C reinforced epoxy composites</h3>
+                    <p class="text-gray-600 text-sm">SAGE Publications, UK | Volume 30, Issue 10</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">SCIE</span>
+                        <span class="text-sm text-gray-500">Advanced Composite Materials, 2020</span>
+                    </div>
+                    <h3 class="font-semibold text-primary text-lg mb-2">A review on mechanical and tribological characterization of boron carbide reinforced epoxy composite</h3>
+                    <p class="text-gray-600 text-sm">Taylor and Francis, UK | Volume 30, Issue 4</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">SCOPUS</span>
+                        <span class="text-sm text-gray-500">Polymers and Polymer Composites, 2020</span>
+                    </div>
+                    <h3 class="font-semibold text-primary text-lg mb-2">Dry sliding wear characterization of SGM-boron carbide hybrid polymer matrix composite</h3>
+                    <p class="text-gray-600 text-sm">SAGE Publications, UK | Volume 29, Issue 7</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">IEEE</span>
+                        <span class="text-sm text-gray-500">ICCMSO 2024, Thailand</span>
+                    </div>
+                    <h3 class="font-semibold text-primary text-lg mb-2">Comparative Performance Evaluation of Spur Gears Made from Cast Iron and Epoxy Resin-Based Hybrid Composite Materials</h3>
+                    <p class="text-gray-600 text-sm">3rd International Conference on Computational Modelling, Simulation and Optimization</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">BOOK</span>
+                        <span class="text-sm text-gray-500">IIP Series, 2024</span>
+                    </div>
+                    <h3 class="font-semibold text-primary text-lg mb-2">Futuristic Trends in Mechanical Engineering, Volume 3, Book 8</h3>
+                    <p class="text-gray-600 text-sm">ISBN: 978-93-5747-557-0</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-gray-600">And 12+ more publications in SCIE, Scopus, and other indexed journals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-primary mb-12">Certifications & Achievements</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg p-6 text-white">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-xl font-bold">NPTEL Gold</span>
+                    </div>
+                    <h3 class="font-semibold text-lg">Industry 4.0 & IIoT</h3>
+                    <p class="text-white/80 text-sm mt-2">Course Topper with 91% score</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg p-6 text-white">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-xl font-bold">NPTEL Silver</span>
+                    </div>
+                    <h3 class="font-semibold text-lg">Soft Skills & Personality</h3>
+                    <p class="text-white/80 text-sm mt-2">Elite certificate with 83% score</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-primary to-secondary rounded-lg p-6 text-white">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                        </svg>
+                        <span class="text-xl font-bold">GATE Qualified</span>
+                    </div>
+                    <h3 class="font-semibold text-lg">2011 & 2016</h3>
+                    <p class="text-white/80 text-sm mt-2">Graduate Aptitude Test in Engineering</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-red-500 to-red-700 rounded-lg p-6 text-white">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-xl font-bold">IELTS 8.5</span>
+                    </div>
+                    <h3 class="font-semibold text-lg">General Training</h3>
+                    <p class="text-white/80 text-sm mt-2">Overall Band Score (2020)</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-green-500 to-green-700 rounded-lg p-6 text-white">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-xl font-bold">ISO 21001</span>
+                    </div>
+                    <h3 class="font-semibold text-lg">Certified Internal Auditor</h3>
+                    <p class="text-white/80 text-sm mt-2">Educational Organization Management</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg p-6 text-white">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                        </svg>
+                        <span class="text-xl font-bold">15+ Coursera</span>
+                    </div>
+                    <h3 class="font-semibold text-lg">Certifications</h3>
+                    <p class="text-white/80 text-sm mt-2">Georgia Tech, U Michigan, & more</p>
+                </div>
+            </div>
+            
+            <!-- FDPs and Workshops -->
+            <div class="mt-16">
+                <h3 class="font-display text-2xl font-semibold text-primary mb-6">Professional Development</h3>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">20+ FDPs from NITTTR, IITs, NITs</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">ATAL FDPs on Additive Manufacturing, 3D Printing</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">International workshops at IIT Mandi on Composites</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">LEAP Leadership Program, NITTTR Chandigarh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Achievements -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title font-display text-3xl md:text-4xl font-bold text-primary mb-12">International Achievements</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-primary mb-2">Formula Student Germany</h3>
+                    <p class="text-sm text-gray-600">Faculty Advisor, Hockenheimring F1 Circuit, 2014</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-primary mb-2">Shell Eco-Marathon</h3>
+                    <p class="text-sm text-gray-600">Philippines 2014, Malaysia 2012-13</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md text-center">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-primary mb-2">International Go-Kart</h3>
+                    <p class="text-sm text-gray-600">LPU Jalandhar, 2015</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-primary mb-2">ICCMSO 2024</h3>
+                    <p class="text-sm text-gray-600">Conference Presentation, Thailand</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-8">Let's Connect</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                Feel free to reach out for academic collaborations, research opportunities, or professional discussions.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
+                <a href="mailto:sunny576bhatia@gmail.com" class="flex items-center space-x-3 bg-white/10 backdrop-blur rounded-lg px-6 py-4 hover:bg-white/20 transition-colors">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span>sunny576bhatia@gmail.com</span>
+                </a>
+                
+                <a href="tel:+918826004666" class="flex items-center space-x-3 bg-white/10 backdrop-blur rounded-lg px-6 py-4 hover:bg-white/20 transition-colors">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <span>+91 8826004666</span>
+                </a>
+                
+                <a href="[linkedin.com](https://www.linkedin.com/in/sunny-bhatia-a1896924/)" target="_blank" class="flex items-center space-x-3 bg-white/10 backdrop-blur rounded-lg px-6 py-4 hover:bg-white/20 transition-colors">
+                    <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center space-x-2 text-gray-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span>Faridabad, Haryana, India</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-400">
+                <p>© 2024 Dr. Sunny Bhatia. All rights reserved.</p>
+                <p class="text-sm mt-2">PhD (Mechanical Engineering) | NIT Kurukshetra</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Typing Animation
+        const typingTexts = [
+            "Associate Professor in Mechanical Engineering",
+            "Deputy Director, IQAC",
+            "ISO 21001 Certified Internal Auditor",
+            "Researcher in Composite Materials",
+            "Quality Assurance Expert",
+            "Academic Leader"
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function typeText() {
+            const currentText = typingTexts[textIndex];
+            const typingElement = document.getElementById('typing-text');
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % typingTexts.length;
+                typingSpeed = 500; // Pause before new text
+            }
+            
+            setTimeout(typeText, typingSpeed);
+        }
+        
+        // Start typing animation when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeText, 1000);
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 64;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card-hover, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
